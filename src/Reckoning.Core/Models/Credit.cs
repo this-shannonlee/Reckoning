@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Reckoning.Core.Models;
-public class Credit : Account, IStatement<Statement>
+public class Credit : Account, IStatement<Bill>
 {
     [Column(TypeName = "decimal(18, 2)"), DataType(DataType.Currency)]
     public decimal Limit { get; set; }
@@ -18,7 +18,7 @@ public class Credit : Account, IStatement<Statement>
     public decimal APRRate { get; set; }
 
     [Display(Name = "Auto Pay")]
-    public bool AutoPay { get; set; } = false;
+    public bool AutoPay { get; set; }
 
     [Display(Name = "Payment Network")]
     public PaymentNetwork PaymentNetwork { get; set; }

@@ -37,6 +37,7 @@ public class Statement
     [Column(TypeName = "decimal(18, 2)")]
     public decimal Fees { get; set; }
 
+    [Required]
     public required StatementStatus Status { get; set; }
 
     [StringLength(50)]
